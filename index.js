@@ -9,7 +9,8 @@ import orderRoute from "./routes/orderRoute.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import path from "path";
-
+import {fileURLToPath} from 'url';
+ 
 const server = express();
 
 //dotenv configuration
@@ -19,6 +20,9 @@ const PORT = process.env.PORT;
 
 // connect db
 connDB();
+// esmodule fix
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename)
 //MiddleWares:
 //routing
 server.use(express.json());
