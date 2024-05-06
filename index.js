@@ -9,10 +9,9 @@ import orderRoute from "./routes/orderRoute.js";
 import cors from "cors";
 import bodyParser from "body-parser";
 import path from "path";
-import {fileURLToPath} from 'url';
- 
+import { fileURLToPath } from "url";
+
 const server = express();
-const apiBaseUrl = 'https://shahishemu.cyclic.app';
 
 //dotenv configuration
 dotenv.config();
@@ -23,7 +22,7 @@ const PORT = process.env.PORT;
 connDB();
 // esmodule fix
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename)
+const __dirname = path.dirname(__filename);
 //MiddleWares:
 //routing
 server.use(express.json());
@@ -45,18 +44,18 @@ server.use(
   })
 );
 
-server.use("*", function (re, res) {
+server.use("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./frontend/build/index.html"));
 });
 
-
-//End points  like:- /register , /login , /forgot-password ,/create-category ,/delete-category ,/update-category
+//Base Url:- http://localhost:4300/app/v1/
+//End points  like:- /register , /lompgin , /forgot-password ,/create-category ,/delete-category ,/update-category
 
 server.listen(PORT, () => {
   console.log(
-    `express server is running on: ${apiBaseUrl}:${PORT};`.bgRed.white
+    `express server is running on: http://localhost:${PORT};`.bgRed.white
   );
   console.log(
-    `express server is running on: ${apiBaseUrl}:${PORT};`.america
+    `express server is running on: http://localhost:${PORT};`.america
   );
 });
