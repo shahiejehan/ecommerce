@@ -12,6 +12,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const server = express();
+const apiBaseUrl = "https://shahishemu.cyclic.app";
 
 //dotenv configuration
 dotenv.config();
@@ -53,9 +54,7 @@ server.use("*", function (req, res) {
 
 server.listen(PORT, () => {
   console.log(
-    `express server is running on: http://localhost:${PORT};`.bgRed.white
+    `express server is running on: ${apiBaseUrl}:${PORT};`.bgRed.white
   );
-  console.log(
-    `express server is running on: http://localhost:${PORT};`.america
-  );
+  console.log(`express server is running on: ${apiBaseUrl}:${PORT};`.america);
 });
