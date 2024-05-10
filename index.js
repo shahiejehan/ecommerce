@@ -13,6 +13,7 @@ import { fileURLToPath } from "url";
 
 const server = express();
 const apiBaseUrl = "https://shahishemu.cyclic.app";
+// const apiBaseUrl = 'http://localhost';
 
 //dotenv configuration
 dotenv.config();
